@@ -1,0 +1,131 @@
+body {
+    background: #fff;
+}
+* {
+    color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+}
+
+li {
+    list-style-position: inside;
+    margin-bottom: 0.8ex;
+}
+
+span, pre, h2, h3, p, ul {
+    background-color: #fff;
+    opacity: 0.90;
+    font-size: 80%;
+}
+
+ul {
+    width: 50%;
+    padding-left: 1em;
+}
+
+.reveal section img {
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+section {
+    background-repeat: no-repeat;
+    background-position: left 0;
+    margin-top: 5%;
+    width: 100%;
+}
+
+pre span {
+    background: none !important;
+}
+
+pre {
+    background: #3F3F3F !important;
+}
+pre code {
+    background: none !important;
+}
+
+.reveal a {
+    color: #767676 !important;
+}
+
+.slide-1 {
+    background-image: url('../images/services_map.png');
+    background-position: -4.5em 1em;
+}
+
+.slide-2 {
+    background-image: url('../images/westalkwho.png');
+    background-position: -5em 2em;
+}
+
+.slide-2 ul {
+    opacity: 0.75;
+}
+
+.exit1 {
+    background-image: url('../images/westalkexitmob.png');
+    background-position: -3em 2em;
+}
+
+.exit2 {
+    background-image: url('../images/westalkexitmoped.png');
+    background-position: 1000px 0;
+}
+
+.animate-exit2 {
+    -webkit-animation-duration: 8s;
+    -webkit-animation-name: slidein;
+    -moz-animation-duration: 8s;
+    -moz-animation-name: slidein;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: -6em 0;
+  }
+ 
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+@-moz-keyframes slidein {
+  from {
+    background-position: -6em 0;
+  }
+ 
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(../fonts/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(../qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(../RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(../HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}

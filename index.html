@@ -1,0 +1,135 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>conn-check - the talk</title>
+
+		<base href="reveal.js/">
+
+		<meta name="description" content="Talk for LeedsDevops">
+		<meta name="author" content="Wes Mason">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="../css/talk.css">
+		<link rel="stylesheet" href="../css/pdf.css", type="text/css" media="print">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+				## conn-check
+				### testing infrastructure and deploys, with style
+
+				Wes Mason  
+				
+				[@1stvamp](http://twitter.com/1stvamp)  
+				</section>
+				<section>
+				## Who?
+				- 	 <img src="../images/twitter.png"/>/ <img src="../images/github.png"/> `@1stvamp`
+				- 	 <img src="../images/ubuntu.png"/> Online services, [Canonical](http://www.canonical.com/)
+				- 	 <img src="../images/heart.jpg"/> Open source
+				- 	 [conn-check](http://conn-check.org/) maintainer
+				</section>
+
+				<section>
+				## conn-check
+				- 	 utility
+				</section>
+
+				<section class="exit1">
+				## sys.exit(0)
+				- 	 Slides: [1stvamp/conn-check-talk](https://github.com/1stvamp/conn-check-talk)
+				</section>
+				<section class="exit2">
+				## ^D
+				- 	 Jonathan "Joff" Oliver: [about.me/joffie](http://about.me/joffie)
+				- 	 Grab me and say hi `:-)`
+				</section>
+				</section>
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="../lib/js/jquery.min.js"></script>
+		<script>
+			$(function() {
+			    $('div.slides section').each(function(i, el) {
+				    el = $(el);
+				    if (el.children('section').length > 0) {
+					return true;
+				    }
+				    el.addClass('slide-' + (i+1));
+				    el.attr('data-markdown', '1');
+			    });
+			    window.initReveal();
+			});
+		</script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			window.initReveal = function() {	
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				overview: true,
+				rollingLinks: false,
+				
+				theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					    { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+				]
+				});
+			};
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    if ($(event.currentSlide).is('.exit2')) {
+				$(event.currentSlide).addClass('animate-exit2');
+			    }
+			});
+			
+		</script>
+
+	</body>
+</html>
