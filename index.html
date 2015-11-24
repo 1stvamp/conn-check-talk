@@ -52,13 +52,134 @@
 				</section>
 
 				<section>
+				<section>
+				## History
+				- 	 <em>UbuntuOne</em>
+				- 	 Connections to Amazon S3, music providers, multiple databases/caches etc.
+				- 	 Strictly controlled firewall
+				</section>
+				<section>
+				## History cont.
+				- 	 `conncheck.py`
+				- 	 Twisted app
+				- 	 Checks outgoing connections required to verify the U1 app **will work**
+				</section>
+				</section>
+				<section>
 				## conn-check
-				- 	 utility
+				- 	 Network connection verification utility
+				- 	 Multiple protocols
+				- 	 Asynchronous network connections
+				- 	 Monitoring
+				- 	 Testing
+				</section>
+
+				<section>
+				<section>
+				## How does it work?
+				
+				    - type: tcp
+				      host: login.ubuntu.com
+				      port: 80
+				    - type: udp
+				      host: localhost
+				      port: 8080
+				      send: aaaa
+				      expect: bbbb
+				      tags:
+				        - foo
+				</section>
+				<section>
+				## How does it work? cont.
+				
+				    - type: tls
+				      host: login.ubuntu.com
+				      port: 443
+				      verify: true
+				      tags:
+				        - bar
+				    - type: redis
+				      host: 127.0.0.1
+				      port: 6379
+				      password: foobared
+				</section>
+				<section>
+				## How does it work? cont.
+				
+				    - type: http
+				      url: https://login.ubuntu.com/
+				      tags:
+				        - foo
+				        - bar
+				    - type: memcache
+				      host: 127.0.0.1
+				      port: 11211
+				</section>
+				<section class="demo">
+				<img src="../images/terminal1.gif" />
+				</section>
+				</section>
+
+				<section>
+				<section>
+				## CHECK ALL THE THINGS!!1
+
+				`udp, tcp, tls, http(s), postgres, amqp, mongodb, memcached, smtp, redis`
+				</section>
+				<section>
+				## Coming soon
+
+				`keystone, swift, snmp, mysql`
+
+				<sub>(honest, I have branches)</sub>
+				</section>
+				</section>
+
+				<section>
+				<section>
+				## But, handwriting YAML is for suckers!
+
+				- 	 Yes, yes it is.
+				- 	 Meet `conn-check-configs`.
+				- 	 Python library and utilities.
+				</section>
+				<section>
+				## conn-check-configs
+
+				Generate YAML from..
+
+				- 	 ..Django settings modules
+				- 	 ..Juju environments
+				- 	 ..live environments with packet sniffing
+				</section>
+				<section class="demo">
+				<img src="../images/terminal2.gif" />
+				</section>
+				<section class="demo">
+				<img src="../images/terminal3.gif" />
+				</section>
+				</section>
+
+				<section>
+				<section>
+				## Monitoring
+
+				- 	 Nagios plugin return standards
+				- 	 `!=0 exit code` == `bad`
+				- 	 Configurable timeouts
+				- 	 Output formatted for debugging/oncall
+				</section>
+				<section>
+				## Juju?
+				</section>
 				</section>
 
 				<section class="exit1">
 				## sys.exit(0)
 				- 	 Slides: [1stvamp/conn-check-talk](https://github.com/1stvamp/conn-check-talk)
+				- 	 [conn-check.org](http://conn-check.org/)
+				- 	 [docs.conn-check.org](http://docs.conn-check.org/)
+				- 	 `bzr branch lp:conn-check`
 				</section>
 				<section class="exit2">
 				## ^D
@@ -126,6 +247,10 @@
 			Reveal.addEventListener( 'slidechanged', function( event ) {
 			    if ($(event.currentSlide).is('.exit2')) {
 				$(event.currentSlide).addClass('animate-exit2');
+			    }
+			    if ($(event.currentSlide).is('.demo')) {
+				var img = $(event.currentSlide).find('img');
+				img.attr('src', img.attr('src'));
 			    }
 			});
 			

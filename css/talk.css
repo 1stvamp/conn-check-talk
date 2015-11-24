@@ -24,6 +24,10 @@ ul {
     padding-left: 1em;
 }
 
+sub {
+    font-size: 70%;
+}
+
 .reveal section img {
     border: none;
     box-shadow: none;
@@ -42,9 +46,6 @@ pre span {
     background: none !important;
 }
 
-pre {
-    background: #3F3F3F !important;
-}
 pre code {
     background: none !important;
 }
@@ -82,6 +83,10 @@ pre code {
     -webkit-animation-name: slidein;
     -moz-animation-duration: 8s;
     -moz-animation-name: slidein;
+}
+
+.demo img {
+    margin-top: -3em !important;
 }
 
 @-webkit-keyframes slidein {
